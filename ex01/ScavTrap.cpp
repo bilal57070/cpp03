@@ -41,5 +41,9 @@ void	ScavTrap::attack(const std::string& target){
 }
 
 void	ScavTrap::guardGate(){
+	if (Hp == 0 || Ep == 0){
+		std::cout << "scav cant do anything no more hp or ep" << std::endl;
+		return;
+	}
 	std::cout << name << " is in gate keeper mode" << std::endl;
 }
