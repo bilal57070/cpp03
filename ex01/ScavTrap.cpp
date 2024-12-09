@@ -2,6 +2,9 @@
 
 ScavTrap::ScavTrap() : ClapTrap() {
 	std::cout << "default constructor of a Scavtrap called" << std::endl;
+	Hp = 100;
+	Ep = 50;
+	Ap = 20;
 }
 
 ScavTrap::~ScavTrap(){
