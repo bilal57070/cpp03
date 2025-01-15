@@ -19,6 +19,20 @@ ClapTrap::ClapTrap(std::string nam){
 	Ap = 15;
 }
 
+ClapTrap::ClapTrap(ClapTrap const &uno){
+	std::cout << "copy constructor called" << std::endl;
+	*this = uno;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &a) {
+	std::cout << "overloaded copy operator called" << std::endl;
+	name = a.name;
+	Hp = a.Hp;
+	Ep = a.Ep;
+	Ap = a.Ap;
+	return *this;
+}
+
 void	ClapTrap::attack(const std::string& target){
 	if (Hp == 0 || Ep == 0){
 		std::cout << "cant do anything no more hp or ep" << std::endl;
@@ -37,7 +51,7 @@ void	ClapTrap::takeDamage(unsigned int amount){
 	std::cout << name << " took " << amount << " damage" << std::endl;
 	Hp = Hp - amount;
 	if (Hp <= 0)
-		std::cout << name << "died" << std::endl;
+		std::cout << name << " died" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount){
